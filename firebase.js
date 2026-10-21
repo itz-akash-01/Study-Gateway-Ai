@@ -1,27 +1,21 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-analytics.js";
-
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAjDLUAl_WvYV_iA-4Ob6L9gjMl4PH8how",
-  authDomain: "akashworldx.firebaseapp.com",
-  projectId: "akashworldx",
-  storageBucket: "akashworldx.firebasestorage.app",
-  messagingSenderId: "112736012898",
-  appId: "1:112736012898:web:2fbfdb7858d9ec1e0f5f3b",
-  measurementId: "G-VRQYD2CFWB"
+  apiKey: "AIzaSyCM2Sj1ocQi7H5nokbznGFy1HzoJPY58QM",
+  authDomain: "study-gateway-ai.firebaseapp.com",
+  projectId: "study-gateway-ai",
+  storageBucket: "study-gateway-ai.firebasestorage.app",
+  messagingSenderId: "960186781802",
+  appId: "1:960186781802:web:0299e101433edf3e6cba13",
+  measurementId: "G-HGYGHRT8JE"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-let analytics = null;
-
-try {
-  if (await isSupported()) {
-    analytics = getAnalytics(app);
-  }
-} catch (error) {
-  console.warn("Firebase Analytics could not start:", error);
-}
-
-export { app, analytics };
+const analytics = getAnalytics(app);
